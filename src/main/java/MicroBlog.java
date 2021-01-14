@@ -10,7 +10,7 @@ public class MicroBlog {
 	public static void main(String[] args) {
 		BasicConfigurator.configure();
 		
-		get("/hello", (reqest, response) -> {
+		get("/kkkk", (reqest, response) -> {
 			Map<String, Object> attributes = new HashMap<>();
 			attributes.put("message", "Hello World");
 			
