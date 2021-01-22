@@ -1,3 +1,5 @@
+package pl.wwsis.microblog;
+
 import static spark.Spark.*;
 import java.util.HashMap;
 import java.util.Map;
