@@ -9,7 +9,7 @@ public class users {
 	public class User{
 		
 		@Column (name= "userId" , nullable= true )
-		private int userId;
+		private long userId;
 		
 		@Column (name= "userName" , nullable= false )
 		private String userName;

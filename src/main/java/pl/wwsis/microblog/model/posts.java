@@ -13,7 +13,7 @@ public class posts {
 	public class Posts{
 		
 		@Column (name= "postId" , nullable= true )
-		private int postId;
+		private long postId;
 		
 		@Column (name= "content" , nullable= false )
 		private String userName;
@@ -25,6 +25,6 @@ public class posts {
 		private String title;
 		
 		@Column (name= "userId" , nullable= true )
-		private int userId;
+		private long userId;
 	}
 }

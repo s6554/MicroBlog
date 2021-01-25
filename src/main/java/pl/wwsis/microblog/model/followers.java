@@ -11,13 +11,13 @@ public class followers {
 	public class Followers{
 		
 		@Column (name= "followerId" , nullable= true )
-		private int followerId;
+		private long followerId;
 	
 		@Column (name= "userId" , nullable= true )
-		private int userId;
+		private long userId;
 		
 		@Column (name= "follows" , nullable= true )
-		private int follows;
+		private long follows;
 
 	}
 	
