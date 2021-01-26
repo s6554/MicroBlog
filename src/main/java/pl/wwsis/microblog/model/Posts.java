@@ -7,8 +7,42 @@ import javax.persistence.*;
 @Table (name="posts")
 public class Posts{
 
-	@Column (name= "postId" , nullable= true )
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column (name= "postId" , nullable= false )
 	private long postId;
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
 
 	@Column (name= "content" , nullable= false )
 	private String userName;
@@ -19,6 +53,6 @@ public class Posts{
 	@Column (name= "title" , nullable= false )
 	private String title;
 
-	@Column (name= "userId" , nullable= true )
+	@Column (name= "userId" , nullable= false )
 	private long userId;
 }
