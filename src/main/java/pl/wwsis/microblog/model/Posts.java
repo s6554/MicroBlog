@@ -12,12 +12,24 @@ public class Posts{
 	@Column (name= "postId" , nullable= false )
 	private long postId;
 
-	public String getUserName() {
-		return userName;
+	@Column (name= "content" , nullable= false )
+	private String content;
+
+	@Column (name= "date" , nullable= false )
+	private Date date;
+
+	@Column (name= "title" , nullable= false )
+	private String title;
+
+	@Column (name= "userId" , nullable= false )
+	private long userId;
+
+	public String getContent() {
+		return content;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public Date getDate() {
@@ -43,16 +55,5 @@ public class Posts{
 	public void setUserId(long userId) {
 		this.userId = userId;
 	}
-
-	@Column (name= "content" , nullable= false )
-	private String userName;
-
-	@Column (name= "date" , nullable= false )
-	private Date date;
-
-	@Column (name= "title" , nullable= false )
-	private String title;
-
-	@Column (name= "userId" , nullable= false )
-	private long userId;
+	
 }
