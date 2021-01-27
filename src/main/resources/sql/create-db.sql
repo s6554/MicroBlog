@@ -3,7 +3,7 @@ drop schema public cascade;
 drop table users if exists;
 CREATE TABLE users (
  userId bigint NOT NULL PRIMARY KEY ,
- userName varchar(255) NOT NULL,
+ userName varchar(255) NOT NULL UNIQUE,
  userPass varchar(255) NOT NULL,
 );
 
