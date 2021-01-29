@@ -1,3 +1,5 @@
+package pl.wwsis.microblog;
+
 import static spark.Spark.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +12,7 @@ public class MicroBlog {
 	public static void main(String[] args) {
 		BasicConfigurator.configure();
 		
-		get("/kkkk", (reqest, response) -> {
+		get("/hello", (reqest, response) -> {
 			Map<String, Object> attributes = new HashMap<>();
 			attributes.put("message", "Hello World");
 			

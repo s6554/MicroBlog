@@ -1,3 +1,4 @@
+/*
 package pl.wwsis.microblog.model;
 
 import javax.persistence.*;
@@ -18,3 +19,4 @@ public class dataSource {
 		private String userPassword;
 	}
 }
+*/

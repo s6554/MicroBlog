@@ -13,4 +13,8 @@ INSERT INTO followers (followerId, userId, follows) VALUES (1, 3, 5);
 INSERT INTO followers (followerId, userId, follows) VALUES (2, 3, 1);
 INSERT INTO followers (followerId, userId, follows) VALUES (3, 3, 2);
 INSERT INTO followers (followerId, userId, follows) VALUES (4, 3, 4);
+<<<<<<< HEAD
 INSERT INTO followers (followerId, userId, follows) VALUES (5, 3, 3);
+=======
+INSERT INTO followers (followerId, userId, follows) VALUES (5, 3, 3);
+>>>>>>> 7f475fe0a44ad2c6c912359bd5cde374d990ac41
