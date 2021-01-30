@@ -10,19 +10,19 @@ public class Posts{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column (name= "postId" , nullable= false )
-	private long postId;
+	public long postId;
 
 	@Column (name= "content" , nullable= false )
-	private String content;
+	public String content;
 
 	@Column (name= "date" , nullable= false )
-	private Date date;
+	public Date date;
 
 	@Column (name= "title" , nullable= false )
-	private String title;
+	public String title;
 
 	@Column (name= "userId" , nullable= false )
-	private long userId;
+	public long userId;
 
 	public String getContent() {
 		return content;

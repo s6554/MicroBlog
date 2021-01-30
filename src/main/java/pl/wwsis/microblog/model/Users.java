@@ -9,7 +9,7 @@ public class Users{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column (name= "userId" , nullable= false )
-	private long userId;
+	public long userId;
 
 	public String getUserName() {
 		return userName;
@@ -28,8 +28,8 @@ public class Users{
 	}
 
 	@Column (name= "userName" , nullable= false )
-	private String userName;
+	public String userName;
 
 	@Column (name= "userPass" , nullable= false )
-	private String userPass;
+	public String userPass;
 }
