@@ -11,5 +11,8 @@ public interface PostsDao<T, S> { //generic types for posts and users
 	
 	List<T> getFullPublicTimeline(); //returns all posts of all users
 	
-	void addPost(String content, Date date, String title, long userId); //adds new post
+	static void addPost(String content, Date date, String title, long userId) {
+		// TODO Auto-generated method stub
+		
+	} //adds new post
 }
