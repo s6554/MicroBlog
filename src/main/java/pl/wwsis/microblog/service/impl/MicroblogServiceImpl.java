@@ -2,6 +2,8 @@ package pl.wwsis.microblog.service.impl;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import pl.wwsis.microblog.dao.FollowersDao;
 import pl.wwsis.microblog.dao.PostsDao;
 import pl.wwsis.microblog.dao.UsersDao;
@@ -10,6 +12,7 @@ import pl.wwsis.microblog.model.Posts;
 import pl.wwsis.microblog.model.Users;
 import pl.wwsis.microblog.service.MicroblogService;
 
+@Service
 public class MicroblogServiceImpl implements MicroblogService{
 
 	Followers followers = new Followers();
