@@ -42,4 +42,7 @@
 		<property name= "entityManagerFactory" ref= "entityManagerFactoryBean"/>
 	</bean>
 
+	<bean id="PostsDao" class="pl.wwsis.microblog.dao.impl.PostsDaoImpl"/>
+	<bean id="FollowersDao" class="pl.wwsis.microblog.dao.impl.FollowersDaoImpl"/>
+	<bean id="UsersDao" class="pl.wwsis.microblog.dao.impl.UsersDaoImpl"/>
 </beans>
