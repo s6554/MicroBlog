@@ -1,8 +1,8 @@
 package WWSIS.Microblog.dao;
 
 
-import ​static​ org.junit.Assert.​assertFalse;
-import ​static​ org.junit.Assert.​assertTrue; 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue; 
 
 import org.springframework.test.annotation.Rollback; 
 import org.springframework.test.context.ContextConfiguration; 
