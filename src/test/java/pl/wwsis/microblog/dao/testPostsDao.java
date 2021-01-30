@@ -1,8 +1,6 @@
 package pl.wwsis.microblog.dao;
 
 import java.sql.Date;
-import java.util.List;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -49,22 +47,23 @@ public class testPostsDao {
 
 	}
 
-	@SuppressWarnings("unchecked")
+
 	@Test
-	public <T> List<T> getUsersTimeline() {
-		return (List<T>) postDao.getUsersTimeline(userDao);
+	public void getUsersTimeline() {
+	 postDao.getUsersTimeline(userDao);
 	}
 
-	@SuppressWarnings("unchecked")
+
+
 	@Test
-	public <T> List<T> getUsersFullTimeline() {
-		return (List<T>) postDao.getUsersFullTimeline(userDao);
+	public void checkGetUsersFullTimeline() {
+	postDao.getUsersFullTimeline(userDao);
 	}
 
-	@SuppressWarnings("unchecked")
+
 	@Test
-	public <T> List<T> getFullPublicTimeline() {
-		return (List<T>) postDao.getFullPublicTimeline();
+	public void testGetFullPublicTimeline() {
+	postDao.getFullPublicTimeline();
 	}
 
 	@Test
