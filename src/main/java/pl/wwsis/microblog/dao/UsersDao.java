@@ -1,8 +1,10 @@
 package pl.wwsis.microblog.dao;
 
-public interface UsersDao<S> {
+import pl.wwsis.microblog.model.Users;
+
+public interface UsersDao {
 	
-	S getUser(String userName);
+	Users getUser(String userName);
 	
 	void addUser(String userName, String userPass);
 }
