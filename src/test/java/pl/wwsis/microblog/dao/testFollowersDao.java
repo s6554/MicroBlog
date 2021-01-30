@@ -1,24 +1,15 @@
-package WWSIS.Microblog.dao;
-
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;  
-
-import org.springframework.test.annotation.Rollback; 
-import org.springframework.test.context.ContextConfiguration; 
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner; 
-
+package pl.wwsis.microblog.dao;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-
-import pl.wwsis.microblog.dao.FollowersDao;
-import pl.wwsis.microblog.dao.UsersDao;
 import pl.wwsis.microblog.model.Followers;
-import pl.wwsis.microblog.model.Users;
 
 
 

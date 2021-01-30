@@ -1,12 +1,6 @@
-package WWSIS.Microblog.dao;
+package pl.wwsis.microblog.dao;
 
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue; 
-
-import org.springframework.test.annotation.Rollback; 
-import org.springframework.test.context.ContextConfiguration; 
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner; 
 import java.sql.Date;
 import java.util.List;
 
@@ -16,7 +10,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import pl.wwsis.microblog.dao.PostsDao;
 import pl.wwsis.microblog.model.Posts;
 
  
