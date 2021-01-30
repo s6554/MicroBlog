@@ -62,6 +62,6 @@ public class testFollowersDao {
 	    
 	    @Test
 	    public void checkTrackedList () {
-	    	FollowersDao.checkTrackedList(newFollowee, newFollower);
+	    	FollowersDao.checkTrackedList();
 	    }
 }

@@ -50,12 +50,12 @@ public class testPostsDao {
     
     @Test
     public <T> List<T> getUsersTimeline() {
-    	return PostsDao.getUsersTimeline(User);
+    	return PostsDao.getUsersTimeline(postDAO);
     }
 
     @Test
     public <T> List<T> getUsersFullTimeline() {
-    	return PostsDao.getUsersFullTimeline(User);
+    	return PostsDao.getUsersFullTimeline(postDAO);
     }
     
     @Test
