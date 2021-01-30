@@ -9,13 +9,13 @@ public class Followers{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column (name= "followerId" , nullable= false )
-	private long followerId;
+	public long followerId;
 
 	@Column (name= "userId" , nullable= false )
-	private long userId;
+	public long userId;
 
 	@Column (name= "follows" , nullable= false )
-	private long follows;
+	public long follows;
 
 	public long getUserId() {
 		return userId;
