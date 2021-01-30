@@ -10,10 +10,10 @@ import pl.wwsis.microblog.dao.UsersDao;
 import pl.wwsis.microblog.model.Followers;
 import pl.wwsis.microblog.model.Posts;
 import pl.wwsis.microblog.model.Users;
-import pl.wwsis.microblog.service.MicroblogService;
+import pl.wwsis.microblog.service.TestMicroblogService;
 
 @Service
-public class MicroblogServiceImpl implements MicroblogService{
+public class MicroblogServiceImpl implements TestMicroblogService{
 
 	Followers followers = new Followers();
 	Posts posts = new Posts();

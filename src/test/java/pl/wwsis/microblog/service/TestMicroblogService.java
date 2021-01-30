@@ -1,6 +1,7 @@
-package pl.wwsis.microblog.dao;
+package pl.wwsis.microblog.service;
 
-import org.junit.Before;
+import static org.junit.Assert.*;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import pl.wwsis.microblog.dao.FollowersDao;
+import pl.wwsis.microblog.dao.PostsDao;
+import pl.wwsis.microblog.dao.UsersDao;
+import pl.wwsis.microblog.model.Posts;
 import pl.wwsis.microblog.model.Users;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -16,33 +21,23 @@ import pl.wwsis.microblog.model.Users;
 @Transactional
 @Rollback(true)
 
-public class testUsersDao {
+public class TestMicroblogService {
 
 	@Autowired
-	UsersDao userDAO;
+	MicroblogService ms;
+	
+	@Autowired
+	PostsDao<Posts, Users> postDao;
 
-	Users newUser;
-
-	String testUser;
-
-	String testPass;
-
-	@Before
-	public void setUp() {
-		this.newUser = new Users();
-		this.newUser.setUserName("John");
-		this.newUser.setUserPass("pass1234");
-		
-		this.testUser = newUser.getUserName();
-	}
-
-	@Test
-	public void addUser() {
-		userDAO.addUser(newUser.getUserName(), newUser.getUserPass());
-	}
+	@Autowired
+	UsersDao userDao;
+	
+	@Autowired
+	FollowersDao<Users> followerDao;
 	
 	@Test
-	public Users getUser() {
-		return userDAO.getUser(testUser);
+	public void test() {
+		fail("Not yet implemented");
 	}
+
 }

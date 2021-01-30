@@ -18,7 +18,7 @@ import pl.wwsis.microblog.model.Users;
 @Transactional
 @Rollback(true)
 
-public class testPostsDao {
+public class TestPostsDao {
 
 	@Autowired
 	PostsDao<Posts, Users> postDao;

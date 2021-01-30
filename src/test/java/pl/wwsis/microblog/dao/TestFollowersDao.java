@@ -13,11 +13,11 @@ import pl.wwsis.microblog.model.Followers;
 import pl.wwsis.microblog.model.Users;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:applicationContext-test.xml" })
+@ContextConfiguration(locations = {"classpath:applicationContext-test.xml"})
 @Transactional
 @Rollback(true)
 
-public class testFollowersDao {
+public class TestFollowersDao {
 
 	@Autowired
 	FollowersDao<Users> followerDao;
