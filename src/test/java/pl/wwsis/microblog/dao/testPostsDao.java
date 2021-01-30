@@ -1,7 +1,7 @@
 package pl.wwsis.microblog.dao;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue; 
+import java.sql.Date;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -13,58 +13,62 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import pl.wwsis.microblog.model.Posts;
-import java.sql.Date;
-import java.util.List;
-
-import javax.persistence.*;
+import pl.wwsis.microblog.model.Users;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:applicationContext-test.xml"})
+@ContextConfiguration(locations = { "classpath:applicationContext-test.xml" })
 @Transactional
 @Rollback(true)
- 
 
 public class testPostsDao {
-	@Autowired
-	PostsDao postDAO;
-		
-	Posts TestPost;
-	
-	Posts User;
- 
-	Date DateAdded;
-    
-    @Before
-    public void setUp () {
-        
-        this.TestPost = new Posts();
-        this.TestPost.postId = 1;
-        this.TestPost.content = "test";
-        this.TestPost.title = "test";
-        this.TestPost.userId = 1;
-        
-        DateAdded = new Date(44000);
-        this.TestPost.date= DateAdded;
-        
-    }
-    
-    @Test
-    public <T> List<T> getUsersTimeline() {
-    	return PostsDao.getUsersTimeline(postDAO);
-    }
 
-    @Test
-    public <T> List<T> getUsersFullTimeline() {
-    	return PostsDao.getUsersFullTimeline(postDAO);
-    }
-    
-    @Test
-    public <T>  List<T> getFullPublicTimeline() {
-    	return PostsDao.getFullPublicTimeline();
-    }
-    
-    @Test
-    public void createPost() {
-    	PostsDao.addPost("test", DateAdded, "test", 1);
-    }
+	@SuppressWarnings("rawtypes")
+	@Autowired
+	PostsDao postDao;
+
+	@Autowired
+	UsersDao userDao;
+
+	Posts TestPost;
+
+	Users User;
+
+	Date DateAdded;
+
+	@Before
+	public void setUp() {
+
+		this.TestPost = new Posts();
+		this.TestPost.postId = 1;
+		this.TestPost.content = "test";
+		this.TestPost.title = "test";
+		this.TestPost.userId = 1;
+
+		DateAdded = new Date(44000);
+		this.TestPost.date = DateAdded;
+
+	}
+
+	@SuppressWarnings("unchecked")
+	@Test
+	public <T> List<T> getUsersTimeline() {
+		return (List<T>) postDao.getUsersTimeline(userDao);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Test
+	public <T> List<T> getUsersFullTimeline() {
+		return (List<T>) postDao.getUsersFullTimeline(userDao);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Test
+	public <T> List<T> getFullPublicTimeline() {
+		return (List<T>) postDao.getFullPublicTimeline();
+	}
+
+	@Test
+	public void createPost() {
+		postDao.addPost("test", DateAdded, "test", 1);
+	}
 }

@@ -1,8 +1,5 @@
 package pl.wwsis.microblog.dao;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue; 
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,39 +11,38 @@ import org.springframework.transaction.annotation.Transactional;
 
 import pl.wwsis.microblog.model.Users;
 
-
-
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:applicationContext-test.xml"})
+@ContextConfiguration(locations = { "classpath:applicationContext-test.xml" })
 @Transactional
 @Rollback(true)
 
-
-
 public class testUsersDao {
 
+	@Autowired
+	UsersDao userDAO;
 
-    @Autowired
-    UsersDao userDAO; 
+	Users newUser;
 
-    Users newUser;
-    
- 
-    @Before
-    public void setUp () {
-        this.newUser = new Users();
-        this.newUser.userId = 1;
-        this.newUser.userName = "John";
-        this.newUser.userPass = "pass1234";
+	String testUser;
 
+	String testPass;
 
-    }
-    @Test
-    public void getUser() {
-    	UsersDao.getUser(newUser);
-    }
-    @Test
-    public   void addUser(){
-    	return userDAO.addUser(newUser);
-    }
-	
+	@Before
+	public void setUp() {
+		this.newUser = new Users();
+		this.newUser.userId = 1;
+		this.newUser.userName = "John";
+		this.newUser.userPass = "pass1234";
+
+	}
+
+	@Test
+	public Users getUser() {
+		return userDAO.getUser(testUser);
+	}
+
+	@Test
+	public void addUser() {
+		userDAO.addUser(testUser, testPass);
+	}
+}

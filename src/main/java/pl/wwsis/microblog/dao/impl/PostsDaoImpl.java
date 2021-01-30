@@ -45,7 +45,6 @@ public class PostsDaoImpl implements PostsDao<Posts, Users>{
 		return results;
 	}
 
-	@Override
 	public void addPost(String content, Date date, String title, long userId) {
 		String sQr = "INSER INTO posts (content, date, title, userId) VALUES (:content, :date, :title, :userId)";
 		Query qQr = entityManager.createQuery(sQr);
