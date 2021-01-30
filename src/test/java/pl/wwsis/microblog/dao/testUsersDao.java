@@ -3,19 +3,24 @@ package pl.wwsis.microblog.dao;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue; 
 
-
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
+
+import pl.wwsis.microblog.model.Users;
+
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:applicationContext-test.xml"})
 @Transactional
 @Rollback(true)
+
 
 
 public class testUsersDao {
@@ -41,10 +46,7 @@ public class testUsersDao {
     	UsersDao.getUser(newUser);
     }
     @Test
-    public   void addUser(String,String){
-    	return userDAO.addUser("Johnatan", "pass8900");
+    public   void addUser(){
+    	return userDAO.addUser(newUser);
     }
 	
-	
-	
-}

@@ -10,7 +10,7 @@ http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-4.0.xsd" >
-< context:component-scan base-package = "pl.microblog" /> <!-- We want to automatically
+< context:component-scan base-package = "pl.wwsis.microblog" /> <!-- We want to automatically
 support all annotated classes in this package. ATTENTION!!! each project can of course have a
 different package structure -->
 < context:annotation-config /> <!-- This for the future will allow us to use annotations
@@ -25,7 +25,7 @@ class = "org.springframework.jdbc.datasource.DriverManagerDataSource" >
 < bean id = "entityManagerFactoryBean"
 class = "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" >
 < property name = "dataSource" ref = "dataSource" />
-< property name = "packagesToScan" value = "WWSIS.Microblog.model" />
+< property name = "packagesToScan" value = "pl.wwsis.microblog.model" />
 < property name = "jpaVendorAdapter" >
 < bean
 class = "org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" >
@@ -47,7 +47,7 @@ class = "org.springframework.dao.annotation.PersistenceExceptionTranslationPostP
 < bean id = "transactionManager" class = "org.springframework.orm.jpa.JpaTransactionManager" >
 < property name = "entityManagerFactory" ref = "entityManagerFactoryBean" />
 </ bean >
-< bean id = "followersDao" class = "WWSIS.Microblog.dao.impl.FollowerDaoImpl" />
-< bean id = "userskDao" class = "WWSIS.Microblog.dao.impl.UserDaoImpl" />
-< bean id = "postsDao" class = "WWSIS.Microblog.dao.impl.PostDaoImpl" />
+< bean id = "FollowersDao" class = "pl.wwsis.microblog.dao.impl.FollowersDaoImpl" />
+< bean id = "UsersDao" class = "pl.wwsis.microblog.dao.impl.UsersDaoImpl" />
+< bean id = "PostsDao" class = "pl.wwsis.microblog.dao.impl.PostsDaoImpl" />
 </ beans >
