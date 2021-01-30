@@ -20,44 +20,41 @@ import pl.wwsis.microblog.model.Users;
 
 public class testPostsDao {
 
-	@SuppressWarnings("rawtypes")
 	@Autowired
-	PostsDao postDao;
+	PostsDao<Posts, Users> postDao;
 
 	@Autowired
 	UsersDao userDao;
 
-	Posts TestPost;
+	Posts testPost;
 
-	Users User;
-
-	Date DateAdded;
+	Users user;
 
 	@Before
 	public void setUp() {
 
-		this.TestPost = new Posts();
-		this.TestPost.postId = 1;
-		this.TestPost.content = "test";
-		this.TestPost.title = "test";
-		this.TestPost.userId = 1;
-
-		DateAdded = new Date(44000);
-		this.TestPost.date = DateAdded;
-
+		this.testPost = new Posts();
+		this.testPost.setContent("test");
+		this.testPost.setTitle("test");
+		this.testPost.setUserId(1);
+		this.testPost.setDate(new Date(44000));
+		
+		this.user = new Users();
+		this.user.setUserName("Mirek");
+		this.user.setUserPass("haslo123");
 	}
 
 
 	@Test
 	public void getUsersTimeline() {
-	 postDao.getUsersTimeline(userDao);
+	 postDao.getUsersTimeline(user);
 	}
 
 
 
 	@Test
 	public void checkGetUsersFullTimeline() {
-	postDao.getUsersFullTimeline(userDao);
+	postDao.getUsersFullTimeline(user);
 	}
 
 
@@ -68,6 +65,6 @@ public class testPostsDao {
 
 	@Test
 	public void createPost() {
-		postDao.addPost("test", DateAdded, "test", 1);
+		postDao.addPost(testPost.getContent(), testPost.getDate(), testPost.getTitle(), testPost.getUserId());
 	}
 }

@@ -30,19 +30,19 @@ public class testUsersDao {
 	@Before
 	public void setUp() {
 		this.newUser = new Users();
-		this.newUser.userId = 1;
-		this.newUser.userName = "John";
-		this.newUser.userPass = "pass1234";
-
-	}
-
-	@Test
-	public Users getUser() {
-		return userDAO.getUser(testUser);
+		this.newUser.setUserName("John");
+		this.newUser.setUserPass("pass1234");
+		
+		this.testUser = newUser.getUserName();
 	}
 
 	@Test
 	public void addUser() {
-		userDAO.addUser(testUser, testPass);
+		userDAO.addUser(newUser.getUserName(), newUser.getUserPass());
+	}
+	
+	@Test
+	public Users getUser() {
+		return userDAO.getUser(testUser);
 	}
 }
