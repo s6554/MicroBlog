@@ -9,14 +9,10 @@ public class Users{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column (name= "userId" , nullable= false )
-<<<<<<< HEAD
 	private long userId;
 	
 	@Column (name= "userName" , nullable= false )
 	private String userName;
-=======
-	public long userId;
->>>>>>> master
 
 	@Column (name= "userPass" , nullable= false )
 	private String userPass;
@@ -40,13 +36,4 @@ public class Users{
 	public void setUserPass(String userPass) {
 		this.userPass = userPass;
 	}
-<<<<<<< HEAD
-=======
-
-	@Column (name= "userName" , nullable= false )
-	public String userName;
-
-	@Column (name= "userPass" , nullable= false )
-	public String userPass;
->>>>>>> master
 }
