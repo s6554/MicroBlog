@@ -10,7 +10,17 @@ public class Users{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column (name= "userId" , nullable= false )
 	private long userId;
+	
+	@Column (name= "userName" , nullable= false )
+	private String userName;
 
+	@Column (name= "userPass" , nullable= false )
+	private String userPass;
+
+	public long getUserId() {
+		return userId;
+	}
+	
 	public String getUserName() {
 		return userName;
 	}
@@ -26,10 +36,4 @@ public class Users{
 	public void setUserPass(String userPass) {
 		this.userPass = userPass;
 	}
-
-	@Column (name= "userName" , nullable= false )
-	private String userName;
-
-	@Column (name= "userPass" , nullable= false )
-	private String userPass;
 }

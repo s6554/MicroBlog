@@ -4,11 +4,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
-
 import pl.wwsis.microblog.dao.FollowersDao;
+import pl.wwsis.microblog.model.Users;
 
 @Transactional
-public class FollowersDaoImpl<S> implements FollowersDao<S>{
+public class FollowersDaoImpl implements FollowersDao<Users>{
 
 	@PersistenceContext
 	EntityManager entityManager;
@@ -28,8 +28,8 @@ public class FollowersDaoImpl<S> implements FollowersDao<S>{
 	}
 
 	@Override
-	public boolean checkTrackedList(Object loggedUser, Object otherUser) {
-		String sQr = "SELECT f FROM followers WHERE f.userId = :loggedUser AND f.follows = :otherUser";	
+	public boolean checkTrackedList(Users loggedUser, Users otherUser) {
+		String sQr = "SELECT f FROM followers WHERE f.userId = :loggedUser.getUserId() AND f.follows = :otherUser.getUserId()";	
 		Query qQr = entityManager.createQuery(sQr);
 		qQr.getResultList();
 		return (qQr!=null);
